@@ -1,0 +1,17 @@
+    body{
+      background-color: #f5f5f5;
+      color: #727E92;
+      padding-bottom: 50px;
+      font-family: "微软雅黑";
+    }
+
+    ul{
+    	list-style: none;
+    }
+
+    a,a:visited{
+    	text-decoration: none;
+    	color: #727E92;
+    }
+
+
