@@ -1,0 +1,16 @@
+html,body{
+	padding:0;
+	margin: 0;
+	height:100%;
+}
+
+.buttons{
+	position: absolute;
+	left:50%;
+	top:50%;
+}
+
+.buttons input{
+	position: relative;
+	left: -50%;
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bootstrap学习</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+      <![endif]-->
+      <style type="text/css">
+        body{
+          padding-top: 50px;
+          padding-bottom: 50px;
+          background: #eee;
+        }
+
+        .carousel{
+          height: 500px;
+          background-color: #000;
+          margin-bottom: 60px;
+        }
+        
+        .carousel .item{       
+          height: 500px;
+        }
+
+
+        .carousel img{
+          width: 80%;
+          margin: 0 auto;
+        }
+
+
+        #my-container .col-md-4{
+          text-align: center;
+        }
+      
+        hr.myhr{
+          margin: 40px 0; 
+        }
+
+        .feature{
+          padding: 30px 0;
+        }
+
+        .feature-heading{
+          font-size: 50px;
+          color: #2a6496;
+          margin-top: 120px;
+        }
+
+        .feature-heading .text-muted{
+          font-size: 28px;
+          color: #999;
+        }
+
+
+      </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar" >
+              <span class="icon-bar"></span>  
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>  
+            </button>
+            <a class="navbar-brand" href="#">我喜爱的动画</a>
+          </div>
+
+          <div class="navbar-collapse collapse" id="my-navbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">首页</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">动画片介绍<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#tab-avatar">阿凡达</a></li>
+                  <li><a href="#tab-dragon">驯龙高手</a></li>
+                  <li><a href="#tab-dasheng">齐天大圣之大圣归来</a></li>
+                  <li><a href="#tab-zootopia">疯狂动物城</a></li>
+                  <li><a href="#tab-prince">小王子</a></li>
+                  <li><a href="#tab-qianxun">千与千寻</a></li>
+                </ul>
+              </li>
+              <li><a href="#" data-toggle="modal" data-target="#myabout">关于(点击查看对话框)</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="images/avatar-big.jpg" alt="1 slide">           
+          </div>
+          <div class="item">
+            <img src="images/dragon-big.jpg" alt="2 slide">           
+          </div>
+          <div class="item">
+            <img src="images/dasheng-big.jpg" alt="3 slide">       
+          </div>
+          <div class="item">
+            <img src="images/zootopia-big.jpg" alt="4 slide">          
+          </div>
+          
+          <div class="item">
+            <img src="images/prince-big.jpg" alt="5 slide">          
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic"  data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" ></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic"  data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" ></span>         
+        </a>
+      </div>
+
+      <div class="container" id="my-container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="images/avatar-logo-small.jpg" alt="阿凡达">
+            <h2>阿凡达</h2>
+            <p>第67届金球奖最佳导演奖和最佳影片奖，第82届奥斯卡金像奖最佳艺术指导、最佳摄影和最佳视觉效果奖。</p>
+            <p><a class="btn btn-default" href="#">免费观看</a></p>
+          </div>
+          <div class="col-md-4">
+            <img src="images/dragon-logo-small.jpg" alt="驯龙高手">
+            <h2>驯龙高手</h2>
+            <p>第67届威尼斯电影节 3-D电影奖， 年度最具创意立体电影，第83届奥斯卡最佳原创配乐和最佳动画长片提名。</p>
+            <p><a class="btn btn-default" href="#">免费观看</a></p>
+          </div>
+          <div class="col-md-4">
+            <img src="images/dasheng-logo-small.jpg" alt="齐天大圣之大圣归来">
+            <h2>齐天大圣</h2>
+            <p>第52届台北金马影展 金马奖 最佳动画长片(提名) ，第16届中国电影华表奖 优秀故事片奖，第30届中国电影金鸡奖 最佳美术片 。</p>
+            <p><a class="btn btn-default" href="#">免费观看</a></p>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-md-4">
+            <img src="images/zootopia-logo-small.jpg" alt="疯狂动物城">
+            <h2>疯狂动物城</h2>
+            <p>第67届威尼斯电影节 3-D电影奖， 年度最具创意立体电影，第83届奥斯卡最佳原创配乐和最佳动画长片提名。</p>
+            <p><a class="btn btn-default" href="#">免费观看</a></p>
+          </div>
+          <div class="col-md-4">
+            <img src="images/prince-logo-small.jpg" alt="小王子">
+            <h2>小王子</h2>
+            <p>第67届威尼斯电影节 3-D电影奖， 年度最具创意立体电影，第83届奥斯卡最佳原创配乐和最佳动画长片提名</p>
+            <p><a class="btn btn-default" href="#">免费观看</a></p>
+          </div>
+          <div class="col-md-4">
+            <img src="images/qianxun-logo-small.jpg" alt="千与千寻">
+            <h2>千与千寻</h2>
+            <p>第67届威尼斯电影节 3-D电影奖， 年度最具创意立体电影，第83届奥斯卡最佳原创配乐和最佳动画长片提名</p>
+            <p><a class="btn btn-default" href="#">免费观看</a></p>
+          </div>
+        </div> 
+
+
+
+        <hr class="myhr">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="my-tablist">
+          <li role="presentation"  class="active"><a href="#tab-avatar"  role="tab" data-toggle="tab">阿凡达</a></li>
+          <li role="presentation"><a href="#tab-dragon"  role="tab" data-toggle="tab">驯龙高手</a></li>
+          <li role="presentation"><a href="#tab-dasheng"  role="tab" data-toggle="tab">齐天大圣之大圣归来</a></li>
+          <li role="presentation"><a href="#tab-zootopia"  role="tab" data-toggle="tab">疯狂动物城</a></li>
+          <li role="presentation"><a href="#tab-prince" role="tab" data-toggle="tab">小王子</a></li>
+          <li role="presentation"><a href="#tab-qianxun" role="tab" data-toggle="tab">千与千寻</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="tab-avatar">
+            <div class="row feature">
+              <div class="col-md-7">
+                <h2 class="feature-heading">阿凡达<span class="text-muted">一场视觉盛宴</span></h2>
+                <p class="lead">《阿凡达》(Avatar)是一部由詹姆斯·卡梅隆执导，二十世纪福克斯出品，萨姆·沃辛顿、佐伊·索尔达娜和西格妮·韦弗等人主演的科幻电影，该片于2009年12月16日以2D、3D和IMAX-3D三种制式在北美上映。截止2010年9月4日，该片以全球累计27亿5400万美元的票房，一举刷新了全球影史票房纪录（不计算通货膨胀）。</p>
+              </div>
+              <div class="col-md-5">
+                <img src="images/avatar-logo.jpg" class="feature-image img-responsive" alt="阿凡达">
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="tab-dragon">
+            <div class="row feature">
+              <div class="col-md-5">
+                <img src="images/dragon-logo.jpg" class="feature-image img-responsive" alt="驯龙高手">
+              </div>
+              <div class="col-md-7">
+                <h2 class="feature-heading">驯龙高手<span class="text-muted">要给电影配乐点一百个赞</span></h2>
+                <p class="lead">《驯龙高手》由梦工厂动画制作，于2010年3月26日上映。其故事内容改编自葛蕾熙达·柯维尔于2003年所作的同名童书《如何驯服你的龙》。负责担任电影的配音演员有杰伊·巴鲁切尔、亚美莉卡·费雷拉、乔纳·希尔、克里斯托夫·梅兹-普莱瑟、克雷格·费格森以及杰拉德·巴特勒等人。</p>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="tab-dasheng">
+            <div class="row feature">
+              <div class="col-md-7">
+                <h2 class="feature-heading">齐天大圣之大圣归来<span class="text-muted">大圣与中国动画一起归来</span></h2>
+                <p class="lead">《西游记之大圣归来》是根据中国传统神话故事《西游记》进行拓展和演绎的3D动画电影，由横店影视、天空之城、燕城十月与微影时代联合高路动画、恭梓兄弟、世纪长龙、山东影视、东台龙行盛世、淮安西游产业与永康壹禾共同出品，田晓鹏执导，张磊、林子杰、刘九容和童自荣等联袂配音。</p>
+              </div>
+              <div class="col-md-5">
+                <img src="images/dasheng-logo.jpg" class="feature-image img-responsive" alt="齐天大圣之大圣归来">
+              </div>
+            </div>  
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="tab-zootopia">
+            <div class="row feature">
+              <div class="col-md-5">
+                <img src="images/zootopia-logo.jpg" class="feature-image img-responsive" alt="疯狂动物城">
+              </div>
+              <div class="col-md-7">
+                <h2 class="feature-heading">疯狂动物城<span class="text-muted">人不就是动物么</span></h2>
+                <p class="lead">《疯狂动物城》由迪士尼影业出品的3D动画片，由里奇·摩尔、拜恩·霍华德及杰拉德·布什联合执导，金妮弗·古德温、杰森·贝特曼、夏奇拉、艾伦·图代克、伊德瑞斯·艾尔巴、J·K·西蒙斯等加盟配音。该片讲述了在一个所有动物和平共处的动物城市，兔子朱迪通过自己努力奋斗完成自己儿时的梦想，成为动物警察的故事。</p>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="tab-prince">
+            <div class="row feature">
+              <div class="col-md-7">
+                <h2 class="feature-heading">小王子<span class="text-muted">写给大人的童话是不存在的</span></h2>
+                <p class="lead">《小王子》是法国作家安托万·德·圣·埃克苏佩里于1942年写成的著名儿童文学短篇小说。本书的主人公是来自外星球的小王子。书中以一位飞行员作为故事叙述者，讲述了小王子从自己星球出发前往地球的过程中，所经历的各种历险。作者以小王子的孩子式的眼光，透视出成人的空虚、盲目，愚妄和死板教条，用浅显天真的语言写出了人类的孤独寂寞、没有根基随风流浪的命运。同时，也表达出作者对金钱关系的批判，对真善美的讴歌。</p>
+              </div>
+              <div class="col-md-5">
+                <img src="images/prince-logo.jpg" class="feature-image img-responsive" alt="小王子">
+              </div>
+            </div> 
+          </div>
+
+           <div role="tabpanel" class="tab-pane" id="tab-qianxun">
+            <div class="row feature">             
+              <div class="col-md-5">
+                <img src="images/qianxun-logo.jpg" class="feature-image img-responsive" alt="千与千寻">
+              </div>
+              <div class="col-md-7">
+                <h2 class="feature-heading">千与千寻<span class="text-muted">最好的宫崎骏</span></h2>
+                <p class="lead">《千与千寻》是宫崎骏执导、编剧，吉卜力工作室制作的动画电影，影片于2001年7月20日在日本正式上映，讲述了少女千寻意外来到神灵异世界后发生的故事。</p>
+              </div>
+            </div> 
+          </div>
+
+        </div>
+
+        <hr class="myhr">
+        <footer>
+          <p class="pull-right"><a href="#top">回到顶部</a></p>
+          <p>Designed by Pangniur &copy;2016</p>
+        </footer>
+
+      </div>
+        
+
+
+
+
+      <div class="modal fade" id="myabout">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">关于</h4>
+            </div>
+            <div class="modal-body">
+              <p>此页面使用bootstrap的导航及下拉菜单，滚动广告，栅格布局，标签页，弹出框，菜单定位等技术，将我喜欢的几部动画片组织在了一起。</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+              
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $("#my-navbar .dropdown-menu a").click(function(){
+            var href = $(this).attr("href");
+            $("#my-tablist a[href='"+href+"']").tab("show");
+          });
+        });
+      </script>
+    </body>
+    </html>
