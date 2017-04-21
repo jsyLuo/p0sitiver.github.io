@@ -8,71 +8,48 @@
     <title>Document</title>
     <script src="./vendor/jquery.js"></script>
     <script src="./vendor/cytoscape.js"></script>
-    <style>
-        #cy {
-            width: 300px;
-            height: 300px;
-            display: block;
-            background-color: pink;
-        }
-    </style>
+<style>
+    body{
+        margin:200px;
+    }
+
+    ul{
+        text-decoration: none;
+        list-style: none;
+    }
+
+    ul li{
+        display: block;
+        float: left;
+        margin-right:20px;
+    }
+    h4{
+        color: #1aaf5d;
+    }
+</style>
 </head>
 <body>
-<div id="cy"></div>
-<script>
 
-    var cy = cytoscape({
-
-        container: document.getElementById('cy'), // container to render in
-
-        elements: [ // list of graph elements to start with
-            { // node a
-                data: { id: 'a' }
-            },
-            { // node b
-                data: { id: 'b' }
-            },
-            { // edge ab
-                data: { id: 'ab', source: 'a', target: 'b' }
-            }
-        ],
-
-        style: [ // the stylesheet for the graph
-            {
-                selector: 'node',
-                style: {
-                    'background-color': '#666',
-                    'label': 'data(id)'
-                }
-            },
-
-            {
-                selector: 'edge',
-                style: {
-                    'width': 3,
-                    'line-color': '#ccc',
-                    'target-arrow-color': '#ccc',
-                    'target-arrow-shape': 'triangle'
-                }
-            }
-        ],
-
-        layout: {
-            name: 'grid',
-            rows: 1
-        }
-
-    });
-
-
-    var eles = cy.add([
-        { group: "nodes", data: { id: "n0" }, position: { x: 100, y: 100 } },
-        { group: "nodes", data: { id: "n1" }, position: { x: 200, y: 200 } },
-        { group: "edges", data: { id: "e0", source: "n0", target: "n1" } }
-    ]);
-
-
-
-</script>
+<h4>学习了几个官网的例子,数据是官网的数组</h4>
+<ul>
+    <li>
+        <button onclick="window.location.href='testCyto/demo1-two-dot.html'">demo1两个点</button>
+    </li>
+    <li>
+        <button onclick="window.location.href='testCyto/demo2-cose-layout.html'">demo2-cose布局</button>
+    </li>
+    <li>
+        <button onclick="window.location.href='testCyto/demo3-spread-layout.html'">demo3-spread布局</button>
+    </li>
+    <li>
+        <button onclick="window.location.href='testCyto/demo4-grid-layout.html'">demo4-grid布局</button>
+    </li>
+    <li>
+        <button onclick="window.location.href='testCyto/demo5-cose-bilkent.html'">demo5-cose-bilkent布局</button>
+    </li>
+    <li>
+        <button onclick="window.location.href='testCyto/demo6-visual-style.html'">demo6-visual风格</button>
+    </li>
+</ul>
 </body>
 </html>
