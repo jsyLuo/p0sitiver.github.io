@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vendor/jquery.js"></script>
+    <script src="../vendor/cytoscape.js"></script>
+    <style>
+        #cy {
+            width: 600px;
+            height: 600px;
+            display: block;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="cy"></div>
+<script>
+
+    var cy = cytoscape({
+
+        container: document.getElementById('cy'), // container to render in
+
+        elements: [ // list of graph elements to start with
+
+        //set 0
+            { // node a
+                data: { id: 'a', name:'fanfan' }
+            },
+                        { // node a
+                data: { id: 'aa', name:'fanfan' }
+            },
+            { // node b
+                data: { id: 'b' ,name:'huihui'}
+            },
+            { // node b
+                data: { id: 'c' ,name:'huihui'}
+            },
+                        { // node a
+                data: { id: 'd', name:'fanfan' }
+            },
+
+
+            { // node a
+                data: { id: 'e', name:'fanfan' }
+            },
+            { // node b
+                data: { id: 'f' ,name:'huihui'}
+            },
+
+
+            { // node a
+                data: { id: 'g', name:'fanfan' }
+            },
+            { // node a
+                data: { id: 'h', name:'fanfan' }
+            },
+            { // node b
+                data: { id: 'i' ,name:'huihui'}
+            },
+
+            { // node a
+                data: { id: 'j', name:'fanfan' }
+            },
+            { // node b
+                data: { id: 'k' ,name:'huihui'}
+            },
+
+
+            { // node a
+                data: { id: 'l', name:'fanfan' }
+            },
+            { // node a
+                data: { id: 'm', name:'fanfan' }
+            },
+            { // node b
+                data: { id: 'n' ,name:'huihui'}
+            },
+
+
+
+
+//set 1
+
+            { // edge ab
+                data: { id: 'hi', source: 'a', target: 'b' }
+            },
+            { // edge ab
+                data: { id: 'ih', source: 'a', target: 'c' }
+            },
+
+            { // edge ab
+                data: { id: 'iha', source: 'a', target: 'd' }
+            },
+
+
+            { // edge ab
+                data: { id: 'ihaf', source: 'a', target: 'e' }
+            },
+
+
+            { // edge ab
+                data: { id: 'ihh', source: 'a', target: 'f' }
+            },
+
+
+            { // edge ab
+                data: { id: 'ef', source: 'a', target: 'g' }
+            },
+
+
+            { // edge ab
+                data: { id: 'ab', source: 'a', target: 'h' }
+            },
+            { // edge ab
+                data: { id: 'cd', source: 'a', target: 'i' }
+            },
+
+            { // edge ab
+                data: { id: 'ihho', source: 'a', target: 'j' }
+            },
+
+
+            { // edge ab
+                data: { id: 'efo', source: 'a', target: 'k' }
+            },
+
+
+            { // edge ab
+                data: { id: 'abo', source: 'a', target: 'l' }
+            },
+            { // edge ab
+                data: { id: 'cdo', source: 'a', target: 'm' }
+            },
+            { // edge ab
+                data: { id: 'udo', source: 'a', target: 'n' }
+            },
+
+
+//set 2
+
+            { // edge ab
+                data: { id: 'hir', source: 'aa', target: 'b' }
+            },
+            { // edge ab
+                data: { id: 'ihr', source: 'aa', target: 'c' }
+            },
+
+            { // edge ab
+                data: { id: 'ihar', source: 'aa', target: 'd' }
+            },
+
+
+            { // edge ab
+                data: { id: 'ihafr', source: 'aa', target: 'e' }
+            },
+
+
+            { // edge ab
+                data: { id: 'ihhr', source: 'aa', target: 'f' }
+            },
+
+
+            { // edge ab
+                data: { id: 'efr', source: 'aa', target: 'g' }
+            },
+
+
+
+        ],
+
+        style: [ // the stylesheet for the graph
+            {
+                selector: 'node',
+                style: {
+                    'background-color': '#666',
+                    'label': 'data(id)'
+                }
+            },
+
+            {
+                selector:'node[name="fanfan"]',
+                style:{
+                    'font-size':'40px'
+                }
+            },
+
+            {
+                selector: 'edge',
+                style: {
+                    'width': 3,
+                    'line-color': '#ccc',
+                    'target-arrow-color': '#ccc',
+                    'target-arrow-shape': 'triangle'
+                }
+            }
+        ],
+
+        layout: {
+        name: 'concentric',
+/*        concentric: function( node ){
+          return node.degree();
+        },
+        levelWidth: function( nodes ){
+          return 2;
+        }*/
+        }
+
+    });
+
+
+/*    var eles = cy.add([
+        { group: "nodes", data: { id: "n0" }, position: { x: 100, y: 100 } },
+        { group: "nodes", data: { id: "n1" }, position: { x: 200, y: 200 } },
+        { group: "edges", data: { id: "e0", source: "n0", target: "n1" } }
+    ]);*/
+
+
+
+</script>
+</body>
+</html>
