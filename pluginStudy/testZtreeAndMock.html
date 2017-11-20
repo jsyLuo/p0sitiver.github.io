@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+    <link rel="stylesheet" href="../vendor/css/zTreeStyle/zTreeStyle.css" type="text/css">
+ 
+
+  <script type="text/javascript" src="../vendor/jquery.js"></script>
+  <script type="text/javascript" src="../vendor/mock.js"></script>
+
+    <script type="text/javascript" src="../vendor/js/jquery.ztree.core.js"></script>
+</head>
+<body>
+  
+  <div id="ff">
+    <ul id="treeDemo" class="ztree"></ul>
+  </div>
+  <button id="save">save</button>
+  <p id="ppp"></p>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+        //调用mock方法模拟数据
+    Mock.mock(
+        'http://mockjs', [{
+            "name": '@FIRST', 
+            "isParent|1": true
+        },{
+            "name": '@FIRST', 
+            "isParent|1": true
+        },{
+            "name": '@FIRST', 
+            "isParent|1": true
+        },{
+            "name": '@FIRST', 
+            "isParent|1": true
+        }]
+    );
+
+
+
+      var setting = {
+      async: {
+        enable: true,
+        url:"http://mockjs",
+        autoParam:["name=n"],
+        //otherParam:{"otherParam":"zTreeAsyncTest"},
+       // dataFilter: filter
+      }
+    };
+
+/*    function filter(treeId, parentNode, childNodes) {
+      if (!childNodes) return null;
+      for (var i=0, l=childNodes.length; i<l; i++) {
+        childNodes[i].name = childNodes[i].name.replace(/\.n/g, '.');
+      }
+      return childNodes;
+    }*/
+
+    $.fn.zTree.init($("#treeDemo"), setting);
+    //ajax请求
+/*    $("#mockjs").click(function() {
+        $.ajax({
+            url: "http://mockjs", //请求的url地址
+            dataType: "json", //返回格式为json
+            async: true, //请求是否异步，默认为异步，这也是ajax重要特性
+            data: {}, //参数值
+            type: "post", //请求方式
+            success: function(req) {
+                //请求成功时处理
+                console.log(req);
+                $("#ff").html(req.content);
+            },
+
+            error: function(err) {
+                //请求出错处理
+                console.log(err);
+            }
+        });
+    });*/
+
+    $("#save").click(function(){
+       var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+       var nodes = treeObj.getSelectedNodes();
+
+       var array = [];
+       for(var i=0; i<nodes.length; i++){
+         
+         
+         var currentNode = nodes[i] ;
+         array.push(currentNode.name);
+         while(currentNode.parentTId){
+          
+          var pNode = currentNode.getParentNode();
+          currentNode = pNode ;
+          array.push(currentNode.name);
+         } 
+
+
+       }
+       $("#ppp").html("selected is:" + array.join('\\'));
+       console.log(array);
+    })
+  })
+</script>
+</body>
+</html>

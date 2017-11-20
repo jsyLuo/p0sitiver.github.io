@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>wave</title>
+    <style type="text/css">
+
+        .page {
+            width: 100%;
+            height: 100%;
+        }
+        #waves {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+        }
+    </style>
+
+</head>
+<body>
+    <canvas id="waves"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById('waves');
+    var ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    //如果浏览器支持requestAnimFrame则使用requestAnimFrame否则使用setTimeout
+    window.requestAnimFrame = (function(){
+        return window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                function( callback ){
+                    window.setTimeout(callback, 1000 / 60);
+                };
+    })();
+
+    //初始角度为0
+    var step = 0;
+
+    var lines = ["rgba(0,222,255, 0.2)", "rgba(157,192,249, 0.2)", "rgba(0,168,255, 0.2)"];
+    function loop(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        step+=0.5;
+        //画3个不同颜色的矩形
+        for(var j = lines.length - 1; j >= 0; j--) {
+            ctx.fillStyle = lines[j];
+            //每个矩形的角度都不同，每个之间相差80度
+            var angle = (step+j*80)*Math.PI/180;
+            var deltaHeight = Math.sin(angle) * 50;
+            var deltaHeightRight = Math.cos(angle) * 50;
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height/2+deltaHeight);
+
+            ctx.bezierCurveTo(canvas.width /4, canvas.height/2+ deltaHeight + deltaHeight*7 , 3* canvas.width / 4, canvas.height/2 + deltaHeightRight + deltaHeightRight*7, canvas.width, canvas.height/2 + deltaHeightRight*2);
+            ctx.lineTo(canvas.width, canvas.height);
+            ctx.lineTo(0, canvas.height);
+            ctx.lineTo(0, canvas.height/2+deltaHeight);
+            ctx.closePath();
+            ctx.fill();
+        }
+        requestAnimFrame(loop);
+    }
+    loop();
+
+</script>
+</html>
