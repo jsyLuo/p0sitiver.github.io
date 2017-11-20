@@ -1,55 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="./vendor/jquery.js"></script>
-    <script src="./vendor/cytoscape.js"></script>
-<style>
-    body{
-        margin:200px;
-    }
-
-    ul{
-        text-decoration: none;
-        list-style: none;
-    }
-
-    ul li{
-        display: block;
-        float: left;
-        margin-right:20px;
-    }
-    h4{
-        color: #1aaf5d;
-    }
-</style>
+    <style>
+        body{
+            background: #ccc;
+        }
+        #myUl{
+            margin:100px;
+            width:900px;
+            list-style: none;
+        }
+        #myUl li a{
+            float: left;
+            width: 30%;
+            height: 30px;
+            text-decoration: none;
+            background: pink;
+        }
+    </style>
 </head>
 <body>
-
-<h4>5月24号学习demo</h4>
-<ul>
-    <li>
-        <button onclick="window.location.href='testCyto/5241.html'">点击事件</button>
-    </li>
-   <li>
-        <button onclick="window.location.href='testCyto/5242.html'">同心圆</button>
-    </li>
-   <!--  <li>
-        <button onclick="window.location.href='testCyto/demo3-spread-layout.html'">demo3-spread布局</button>
-    </li>
-    <li>
-        <button onclick="window.location.href='testCyto/demo4-grid-layout.html'">demo4-grid布局</button>
-    </li>
-    <li>
-        <button onclick="window.location.href='testCyto/demo5-cose-bilkent.html'">demo5-cose-bilkent布局</button>
-    </li>
-    <li>
-        <button onclick="window.location.href='testCyto/demo6-visual-style.html'">demo6-visual风格</button>
-    </li> -->
-</ul>
+    <ul id="myUl">
+        <li><a href="./testCyto/main.html">cytoscape 点击事件、同心圆</a></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 </body>
 </html>
