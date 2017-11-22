@@ -1,0 +1,374 @@
+<!DOCTYPE>
+
+<html>
+
+	<head>
+		<title>Graph</title>
+
+		
+<!--
+			<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.2.1/cytoscape.min.js"></script>
+	
+		<script src="/js/jquery-2.0.3.min.js"></script>
+		<script src="/js/cytoscape.min.js"></script>				
+		<script src="/js/c/menu/cytoscape-cxtmenu.js"></script>	
+		<link href="/js/c/nav/cytoscape.js-navigator.css" rel="stylesheet" type="text/css" />
+		<script src="/js/c/nav/cytoscape.js-navigator.js"></script>
+!-->
+		
+<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="/js/cytoscape.min.js"></script>				
+		<script src="/js/c/menu/cytoscape-cxtmenu.js"></script>	
+		<link href="/js/c/nav/cytoscape.js-navigator.css" rel="stylesheet" type="text/css" />
+		<script src="/js/c/nav/cytoscape.js-navigator.js"></script>
+	
+		<style>
+			body {
+				font-family: proxima-nova, Roboto, sans-serif;
+				font-size: 14px;
+			}
+			#cy {
+				width: 100%;
+				height: 100%;
+			//	border: 1px solid #888;
+			}
+		</style>
+
+		<script>
+		
+	
+		
+		function embed(emb) {
+		
+		
+		window.prompt("Please copy the following code to embed the graph on another site", "<iframe src=\"" + emb + "\" frameborder='0' style='height: 90%; width: 90%;'></iframe>"); 
+		return 0;
+		}
+		
+$(function(){
+
+				var cy = window.cy = cytoscape({
+					container: document.getElementById('cy'),
+
+					ready: function(){
+					},
+					
+
+
+					style: [
+						{
+							selector: 'node',
+							css: {
+									'content': 'data(name)',
+								'width': 'data(size)',
+								'height': 'data(size)',
+								'background-color': 'data(color)',
+								'border-color': 'data(borderColor)',
+								'border-width': 'data(borderSize)',
+								'font-family': 'proxima-nova, Roboto, sans-serif',
+								'text-transform': 'uppercase',
+								'font-size': '20px'
+							}
+						},
+
+						{
+							selector: 'edge',
+							css: {
+								'target-arrow-shape': 'triangle',
+								'line-color': '#616161'
+							}
+						}
+					],
+
+elements: {
+  nodes: [
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 36, color: '#3F51B5'} },	{ data:	{	id: '4689c9048180648ddda12f895b7f677a', name: '4689c9048180648ddda12f895b7f677a', size: 51.701843577328, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '57252bcd88cf05bf0e9787e47325cedf', name: '57252bcd88cf05bf0e9787e47325cedf', size: 48.002227261473, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '840200abef233d9043250d5b1c366b7b', name: '840200abef233d9043250d5b1c366b7b', size: 48.002227261473, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'd6755cd7f07d5fb60ad78d776fb5b983', name: 'd6755cd7f07d5fb60ad78d776fb5b983', size: 48.002227261473, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'dd5ae122f1200ceb2c2c9a484ed08823', name: 'dd5ae122f1200ceb2c2c9a484ed08823', size: 38.271064666877, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'e5f7642e90b3f8393c44be418b2bff0a', name: 'e5f7642e90b3f8393c44be418b2bff0a', size: 38.271064666877, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'e6d8ebda773f9b4b129ddc0bf7865c7b', name: 'e6d8ebda773f9b4b129ddc0bf7865c7b', size: 48.002227261473, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.mybroiler.com', name: 'www.mybroiler.com', size: 74.368922189508, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'girlmoney.info', name: 'girlmoney.info', size: 48.002227261473, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.ehllo.com', name: 'www.ehllo.com', size: 79.1850188806, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'ehllo.com', name: 'ehllo.com', size: 80.2518611823, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'girlmoney.info', name: 'girlmoney.info', size: 48.002227261473, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'mybroiler.com', name: 'mybroiler.com', size: 75.666535499995, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'myisgirl.com', name: 'myisgirl.com', size: 31.366694928035, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.myisgirl.com', name: 'www.myisgirl.com', size: 21.635532333439, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.myrouji.com', name: 'www.myrouji.com', size: 21.635532333439, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.newrouji.com', name: 'www.newrouji.com', size: 21.635532333439, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'lws.kimoo.com.tw', name: 'lws.kimoo.com.tw', size: 21.635532333439, color: '#C2185B', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.ehllo.com', name: 'www.ehllo.com', size: 79.1850188806, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'Backdoor.Win32.Zegost', name: 'Backdoor.Win32.Zegost', size: 31.366694928035, color: '#607D8B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.ehllo.com', name: 'www.ehllo.com', size: 79.1850188806, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'Backdoor.Win32.Zzslash.v004', name: 'Backdoor.Win32.Zzslash.v004', size: 21.635532333439, color: '#607D8B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.ehllo.com', name: 'www.ehllo.com', size: 79.1850188806, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'Backdoor.Win32.A.ZZSlash.873676', name: 'Backdoor.Win32.A.ZZSlash.873676', size: 21.635532333439, color: '#607D8B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.ehllo.com', name: 'www.ehllo.com', size: 79.1850188806, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'Backdoor.Win32.Zegost', name: 'Backdoor.Win32.Zegost', size: 31.366694928035, color: '#607D8B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.yourbroiler.com', name: 'www.yourbroiler.com', size: 21.635532333439, color: '#C2185B', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.meitanjiaoyiwang.com', name: 'www.meitanjiaoyiwang.com', size: 21.635532333439, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'www.ehllo.com', name: 'www.ehllo.com', size: 79.1850188806, color: '#C2185B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'Backdoor.Win32.A.ZZSlash.802508.C', name: 'Backdoor.Win32.A.ZZSlash.802508.C', size: 21.635532333439, color: '#607D8B', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'd1adf93a2edc0ef09e781bf17dc2a7f9', name: 'd1adf93a2edc0ef09e781bf17dc2a7f9', size: 21.635532333439, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '85ce95c0a61a523e6d7f1eb3a9a31b32', name: '85ce95c0a61a523e6d7f1eb3a9a31b32', size: 21.635532333439, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'd3108dcd671a3089cc63cf7231e7b9e3', name: 'd3108dcd671a3089cc63cf7231e7b9e3', size: 21.635532333439, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '165ab36cbd004690a338d22fdd29fde1', name: '165ab36cbd004690a338d22fdd29fde1', size: 21.635532333439, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'c18011f5de7781faa2f3f832efb62c1c', name: 'c18011f5de7781faa2f3f832efb62c1c', size: 21.635532333439, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '713aeec0b1dc9047f720d49371068a66', name: '713aeec0b1dc9047f720d49371068a66', size: 21.635532333439, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '103.232.215.135', name: '103.232.215.135', size: 21.635532333439, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '174.139.92.90', name: '174.139.92.90', size: 38.271064666877, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '174.139.92.90', name: '174.139.92.90', size: 38.271064666877, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '174.139.92.91', name: '174.139.92.91', size: 31.366694928035, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '174.139.92.91', name: '174.139.92.91', size: 31.366694928035, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '204.11.56.48', name: '204.11.56.48', size: 21.635532333439, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: '58.158.177.102', name: '58.158.177.102', size: 21.635532333439, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: '68.68.105.174', name: '68.68.105.174', size: 31.366694928035, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: '68.68.105.174', name: '68.68.105.174', size: 31.366694928035, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: '1561561@163.com', name: '1561561@163.com', size: 21.635532333439, color: '#FF9800', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '184.168.221.75', name: '184.168.221.75', size: 21.635532333439, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'jiaqihan0101@hotmail.com', name: 'jiaqihan0101@hotmail.com', size: 21.635532333439, color: '#FF9800', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'd6755cd7f07d5fb60ad78d776fb5b983', name: 'd6755cd7f07d5fb60ad78d776fb5b983', size: 48.002227261473, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '80d5bd28272c379628194f44ecd88df9', name: '80d5bd28272c379628194f44ecd88df9', size: 21.635532333439, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '4689c9048180648ddda12f895b7f677a', name: '4689c9048180648ddda12f895b7f677a', size: 51.701843577328, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '57252bcd88cf05bf0e9787e47325cedf', name: '57252bcd88cf05bf0e9787e47325cedf', size: 48.002227261473, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '840200abef233d9043250d5b1c366b7b', name: '840200abef233d9043250d5b1c366b7b', size: 48.002227261473, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: 'e6d8ebda773f9b4b129ddc0bf7865c7b', name: 'e6d8ebda773f9b4b129ddc0bf7865c7b', size: 48.002227261473, color: '#9C27B0', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '117.22.68.106', name: '117.22.68.106', size: 21.635532333439, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '174.139.92.90', name: '174.139.92.90', size: 38.271064666877, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '199.114.247.231', name: '199.114.247.231', size: 31.366694928035, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '199.114.247.231', name: '199.114.247.231', size: 31.366694928035, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '31.31.204.59', name: '31.31.204.59', size: 21.635532333439, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: '46.182.25.203', name: '46.182.25.203', size: 21.635532333439, color: '#444f58', borderSize: '0', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: '98.126.67.114', name: '98.126.67.114', size: 84.972908244205, color: '#444f58', borderSize: '5', borderColor: '#00C853'} },
+	{ data:	{	id: 'contact@privacyprotect.org', name: 'contact@privacyprotect.org', size: 21.635532333439, color: '#FF9800', borderSize: '0', borderColor: '#00C853'} }
+ ],
+  edges: [
+  	{	data:	{	source: '98.126.67.114', target: '4689c9048180648ddda12f895b7f677a'} },
+	{	data:	{	source: '98.126.67.114', target: '57252bcd88cf05bf0e9787e47325cedf'} },
+	{	data:	{	source: '98.126.67.114', target: '840200abef233d9043250d5b1c366b7b'} },
+	{	data:	{	source: '98.126.67.114', target: 'd6755cd7f07d5fb60ad78d776fb5b983'} },
+	{	data:	{	source: '98.126.67.114', target: 'dd5ae122f1200ceb2c2c9a484ed08823'} },
+	{	data:	{	source: '98.126.67.114', target: 'e5f7642e90b3f8393c44be418b2bff0a'} },
+	{	data:	{	source: '98.126.67.114', target: 'e6d8ebda773f9b4b129ddc0bf7865c7b'} },
+	{	data:	{	source: '98.126.67.114', target: 'www.mybroiler.com'} },
+	{	data:	{	source: '98.126.67.114', target: 'girlmoney.info'} },
+	{	data:	{	source: '98.126.67.114', target: 'www.ehllo.com'} },
+	{	data:	{	source: '98.126.67.114', target: 'ehllo.com'} },
+,
+	{	data:	{	source: '98.126.67.114', target: 'mybroiler.com'} },
+	{	data:	{	source: '98.126.67.114', target: 'myisgirl.com'} },
+	{	data:	{	source: '98.126.67.114', target: 'www.myisgirl.com'} },
+	{	data:	{	source: '98.126.67.114', target: 'www.myrouji.com'} },
+	{	data:	{	source: '98.126.67.114', target: 'www.newrouji.com'} },
+	{	data:	{	source: '4689c9048180648ddda12f895b7f677a', target: 'lws.kimoo.com.tw'} },
+	{	data:	{	source: '4689c9048180648ddda12f895b7f677a', target: 'www.ehllo.com'} },
+,
+	{	data:	{	source: '4689c9048180648ddda12f895b7f677a', target: 'Backdoor.Win32.Zegost'} },
+	{	data:	{	source: '57252bcd88cf05bf0e9787e47325cedf', target: 'www.ehllo.com'} },
+,
+	{	data:	{	source: '57252bcd88cf05bf0e9787e47325cedf', target: 'Backdoor.Win32.Zzslash.v004'} },
+	{	data:	{	source: '840200abef233d9043250d5b1c366b7b', target: 'www.ehllo.com'} },
+,
+	{	data:	{	source: '840200abef233d9043250d5b1c366b7b', target: 'Backdoor.Win32.A.ZZSlash.873676'} },
+	{	data:	{	source: 'd6755cd7f07d5fb60ad78d776fb5b983', target: 'www.ehllo.com'} },
+,
+	{	data:	{	source: 'd6755cd7f07d5fb60ad78d776fb5b983', target: 'Backdoor.Win32.Zegost'} },
+	{	data:	{	source: 'dd5ae122f1200ceb2c2c9a484ed08823', target: 'www.yourbroiler.com'} },
+,
+	{	data:	{	source: 'e5f7642e90b3f8393c44be418b2bff0a', target: 'www.meitanjiaoyiwang.com'} },
+,
+	{	data:	{	source: 'e6d8ebda773f9b4b129ddc0bf7865c7b', target: 'www.ehllo.com'} },
+,
+	{	data:	{	source: 'e6d8ebda773f9b4b129ddc0bf7865c7b', target: 'Backdoor.Win32.A.ZZSlash.802508.C'} },
+	{	data:	{	source: 'www.mybroiler.com', target: 'd1adf93a2edc0ef09e781bf17dc2a7f9'} },
+	{	data:	{	source: 'www.mybroiler.com', target: '85ce95c0a61a523e6d7f1eb3a9a31b32'} },
+	{	data:	{	source: 'www.mybroiler.com', target: 'd3108dcd671a3089cc63cf7231e7b9e3'} },
+	{	data:	{	source: 'www.mybroiler.com', target: '165ab36cbd004690a338d22fdd29fde1'} },
+	{	data:	{	source: 'www.mybroiler.com', target: 'c18011f5de7781faa2f3f832efb62c1c'} },
+	{	data:	{	source: 'www.mybroiler.com', target: '713aeec0b1dc9047f720d49371068a66'} },
+	{	data:	{	source: 'www.mybroiler.com', target: '103.232.215.135'} },
+	{	data:	{	source: 'www.mybroiler.com', target: '174.139.92.90'} },
+,
+	{	data:	{	source: 'www.mybroiler.com', target: '174.139.92.91'} },
+,
+	{	data:	{	source: 'www.mybroiler.com', target: '204.11.56.48'} },
+	{	data:	{	source: 'www.mybroiler.com', target: '58.158.177.102'} },
+	{	data:	{	source: 'www.mybroiler.com', target: '68.68.105.174'} },
+,
+	{	data:	{	source: 'www.mybroiler.com', target: '1561561@163.com'} },
+	{	data:	{	source: 'girlmoney.info', target: '184.168.221.75'} },
+,
+	{	data:	{	source: 'girlmoney.info', target: 'jiaqihan0101@hotmail.com'} },
+,
+	{	data:	{	source: 'www.ehllo.com', target: '80d5bd28272c379628194f44ecd88df9'} },
+,
+,
+,
+,
+	{	data:	{	source: 'www.ehllo.com', target: '117.22.68.106'} },
+	{	data:	{	source: 'www.ehllo.com', target: '174.139.92.90'} },
+	{	data:	{	source: 'www.ehllo.com', target: '199.114.247.231'} },
+,
+	{	data:	{	source: 'www.ehllo.com', target: '31.31.204.59'} },
+	{	data:	{	source: 'www.ehllo.com', target: '46.182.25.203'} },
+,
+,
+	{	data:	{	source: 'www.ehllo.com', target: 'contact@privacyprotect.org'} }
+  ]
+},
+
+
+
+
+  
+  layout: {
+  name: 'cose',
+
+  // Called on `layoutready`
+  ready               : function() {},
+
+  // Called on `layoutstop`
+  stop                : function() {},
+
+  // Whether to animate while running the layout
+  animate             : false,
+
+  // Number of iterations between consecutive screen positions update (0 -> only updated on the end)
+  refresh             : 0,
+  
+  // Whether to fit the network view after when done
+  fit                 : true, 
+
+  // Padding on fit
+  padding             : 30, 
+
+  // Constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
+  boundingBox         : undefined,
+
+  // Whether to randomize node positions on the beginning
+  randomize           : true,
+  
+  // Whether to use the JS console to print debug messages
+  debug               : false,
+
+  // Node repulsion (non overlapping) multiplier
+  nodeRepulsion       : 9000000,
+  
+  // Node repulsion (overlapping) multiplier
+  nodeOverlap         : 10,
+  
+  // Ideal edge (non nested) length
+  idealEdgeLength     : 10,
+  
+  // Divisor to compute edge forces
+  edgeElasticity      : 100,
+  
+  // Nesting factor (multiplier) to compute ideal edge length for nested edges
+  nestingFactor       : 5, 
+  
+  // Gravity force (constant)
+  gravity             : 250, 
+  
+  
+  
+  // Maximum number of iterations to perform
+  
+  // 71
+numIter             : 30,  
+  
+  
+  
+  // Initial temperature (maximum node displacement)
+  initialTemp         : 200,
+  
+  // Cooling factor (how the temperature is reduced between consecutive iterations
+  coolingFactor       : 0.95, 
+  
+  // Lower temperature threshold (below this point the layout will end)
+  minTemp             : 1.0
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  					
+					
+					
+				});
+
+				
+				
+				
+					
+				
+				
+				$('#cy').cytoscapeNavigator({
+					// options go here
+				});
+				
+			
+				
+					cy.cxtmenu({
+					commands: [
+					
+
+						{
+							content: 'Pivot',
+							select: function(){
+							top.location.href= "/pivot.php?data=" +  this.data('name');
+							}
+						},
+							
+							
+							{
+							content: 'Clipboard',
+							select: function(){
+							 window.prompt("Copy to clipboard: Ctrl+C, Enter", this.data('name')); 
+							}
+						}
+					]
+				});
+				
+				
+
+				
+				
+				
+			});
+		</script>
+	</head>
+
+	<body>
+
+
+	
+
+	<div style="position:absolute; top: 0px; left: 20px; z-index: 1000; width: 500px;">
+	<A href="/graphHtml.php?ip=98.126.67.114"><img src="/img/network.png" height=25 width=25></a><a href="/graphViewTable.php?ip=98.126.67.114"><img src="/img/table.png" height=25 width=25></a><a href="/graphViewMap.php?ip=98.126.67.114"><img src="/img/globe.png" height=25 width=25></a><a href="javascript:top.location.href='https://twitter.com/share?url=' +  document.referrer;"><img src="/img/twitter.png" height=25 width=25></a>
+	
+
+	</div>
+
+	
+
+		<div id="cy"></div>
+	</body>
+
+</html>
