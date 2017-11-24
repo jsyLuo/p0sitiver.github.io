@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap.min.css">
+
+    <style>
+        html,
+        body,
+        #main {
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+        }
+
+
+        #left {
+            background: #414144;
+            width: 14%;
+            height: 100%;
+            float: left;
+        }
+
+        #right {
+            float: left;
+            width: 80%;
+            margin-left: 60px;
+            margin-top: 70px;
+        }
+
+        .mybtn {
+            font-size: 12px;
+            padding: 2px 8px;
+        }
+
+        /* 
+        #test {
+            background: white;
+            margin: 30px 50px;
+            padding: 50px;
+            width: 100%;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+        }
+
+ */
+
+        @keyframes myFlash {
+            from {
+
+                background-image: linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1));
+
+
+                background-image: -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1));
+
+
+                background-image: -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+                -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1));
+
+            }
+            to {
+                background-image: linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0));
+
+
+                background-image: -webkit-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -webkit-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0));
+
+                background-image: -ms-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -ms-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -ms-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -ms-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -ms-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -ms-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -ms-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0)),
+                -ms-linear-gradient(rgba(67, 134, 160, 0), rgba(67, 134, 160, 0));
+
+            }
+        }
+
+        .jss {
+
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-image: linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1));
+
+            background-image: -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -webkit-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1));
+
+            background-image: -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1)),
+            -ms-linear-gradient(rgba(67, 134, 160, 1), rgba(67, 134, 160, 1));
+
+
+            background-repeat: no-repeat;
+            -webkit-background-size: 1rem 2px, 1rem 2px, 1rem 2px, 1rem 2px, 2px 1rem, 2px 1rem, 2px 1rem, 2px 1rem;
+            background-size: 1rem 2px, 1rem 2px, 1rem 2px, 1rem 2px, 2px 1rem, 2px 1rem, 2px 1rem, 2px 1rem;
+
+            background-position: 0 0, 100% 0, 0 100%, 100% 100%;
+            animation: myFlash 2s infinite;
+            -webkit-animation: myFlash 0.8s infinite;
+            /* Safari 与 Chrome */
+            -webkit-animation-timing-function: ease-in-out;
+            /* Safari 和 Chrome */
+            animation-timing-function: ease-in-out;
+            -webkit-transition: background-size 0.2s;
+            transition: background-size 0.2s;
+        }
+
+        .jss:hover {
+            animation: none;
+            background-size: 100% 2px, 100% 2px, 100% 2px, 100% 2px, 2px 100%, 2px 100%, 2px 100%, 2px 100%;
+            -webkit-background-size: 100% 2px, 100% 2px, 100% 2px, 100% 2px, 2px 100%, 2px 100%, 2px 100%, 2px 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="left"></div>
+        <div id="right">
+
+            <!-- <div id="test">
+          <div  id="jss">
+              <button>金三顺</button>
+          </div>
+
+<br/>
+<br/> -->
+
+            <h3>css3按钮闪动效果</h3>
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>name</th>
+                        <th>name</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>xxxxxx</td>
+                        <td>xxxxxx</td>
+                        <td>
+                            <div class="jss">
+                                <button class="btn btn-primary mybtn">点我点我</button>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>xxxxxx</td>
+                        <td>xxxxxx</td>
+                        <td>
+                            <div class="jss">
+                                <button class="btn btn-primary mybtn">点我点我</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>xxxxxx</td>
+                        <td>xxxxxx</td>
+                        <td>
+                            <div class="jss">
+                                <button class="btn btn-primary mybtn">点我点我</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
