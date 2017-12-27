@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+    <link rel="stylesheet" type="text/css" href="../vendor/range-slider/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/range-slider/ion.rangeSlider.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/range-slider/ion.rangeSlider.skinFlat.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="../vendor/jquery.js"></script>
+    <script src="../vendor/moment.js"></script>
+    <script src="../vendor/range-slider/ion.rangeSlider.js"></script>
+    <style>
+
+        .fa{
+            font-size: 16px;
+        }
+
+         #fanfan{
+             width: 100%;
+         }
+         #my-time{
+             margin: 160px 100px 50px 130px;
+             height: 100px;
+             width: 1000px;
+         }
+         /* .irs-min,.irs-max{
+            visibility: hidden !important;
+         } */
+
+          .irs-grid-pol.small {
+
+           display: none;
+         } 
+
+
+         /* .irs-grid-text:last-child, */
+         .irs-grid .irs-grid-pol:last-child{
+            display: none;
+         }
+
+         i{
+             width: 20px;
+             height: 20px;
+         }
+
+         p{
+             color: #555;
+             font-size: 14px;
+             margin-left: 260px;
+         }
+
+         .irs-line,
+         .irs-line-left,
+         .irs-line-mid,
+         .irs-line-right,
+         .irs-bar,
+         .irs-bar-edge
+         {
+             height: 10px;
+         }
+
+    </style>
+</head>
+<body>
+   
+    <div id="my-time">
+        <input type="text" id="example_id" name="example_name" value="" />
+    </div>
+
+    <p>所选时间是: <span  id="output-text"></span></p>
+       
+        <script>
+        $(function(){
+
+            var time = +moment().subtract(1, "months").format("X");
+            $("#output-text").text(moment(time, 'X').format('l'));
+
+            $("#example_id").ionRangeSlider({
+                min: +moment().subtract(3, "months").format("X"),
+                max: +moment().format("X"),
+                from: +moment().subtract(1, "months").format("X"),
+                grid: true,
+                grid_margin: true,
+                hide_min_max: true,
+  
+                onChange: function(data){
+                    console.log(data,this);
+                    var time = moment(data.from, 'X').format('l');
+                   $("#output-text").text(time);
+                },
+                onUpdate: function(data){
+                   
+                },
+                prettify: function (num) {
+                    if(num == (+moment().format("X"))){
+                       return 'Today';
+                    }
+                    return moment(num, "X").local('zh-cn').format("L");
+                }
+            });
+
+
+
+        })
+        </script>
+</body>
+</html>
