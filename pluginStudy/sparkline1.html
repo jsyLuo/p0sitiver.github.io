@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="../vendor/bootstrap.min.css">
+  <script src="../vendor/jquery.js"></script>
+  <script src="../vendor/moment.js"></script>
+  <script src="../vendor/sparkline/jquery.sparkline.js"></script>
+  <!-- <script type="text/javascript" src="vendor/bootstrap.min.js"></script> -->
+  <style>
+    html{
+      height: 100%;
+    }
+    body{
+      background: #eee;
+      height: 100%;
+    }
+
+ #main{
+  height: 100%;
+ }
+ #left{
+  background: #414144;
+  width: 12%;
+  height: 100%;
+  float:left;
+}
+#right{
+  float: left;
+  width: 80%;
+}
+ #test{
+  background: white;
+  margin:30px 50px;
+  padding: 50px;
+  width: 100%;
+}
+h3{
+  margin-bottom: 20px;
+}
+
+.mybtn{
+  padding: 2px 8px;
+}
+
+#right{
+  margin-left: 60px;
+  margin-top: 70px;
+}
+
+
+.my-span-1,
+.my-span-2{
+    position: relative;
+    height: 20px;
+   
+    /* display: inline-block; */
+  
+    float: right;
+    font-size: 16px;
+    text-align: right;
+    margin-right: 20%;
+}
+
+.my-span-1{
+    background: #FB9A99;
+}
+.my-span-2{
+    background: #67C3EF;
+}
+
+.span-text{
+    position: absolute;
+    right: 0;
+
+}
+
+.dynamicbar{
+    height: 30px;
+}
+
+.jqstooltip{
+    width: 146px !important;
+  height: 38px !important;
+}
+
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div id="left"></div>
+    <div id="right">
+
+
+
+    <table class="table">
+      
+      <thead>
+        <tr>
+          <th></th>
+          <th style="width: 70px">dstport</th>
+          <th style="width: 200px">uniq srcip</th>
+          <th style="width: 300px">scan volume by uniq src</th>
+          <th style="width: 200px">total count</th>
+          <th>scan volume by count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td>23</td>
+          <td><span class="my-span-1" style="width: 70%"><span class="span-text">38.8K</span></span></td>
+          <td><span class="dynamicbar">Loading..</span></td>
+          <td><span class="my-span-2" style="width: 70%"><span class="span-text">4.5M</span></span></td>
+          <td><span class="dynamicbar2">Loading..</span></td>
+          
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>1433</td>
+          <td><span class="my-span-1" style="width: 10%"><span class="span-text">3.44K</span></span></td>
+          <td><span class="dynamicbar">Loading..</span></td>
+          <td><span class="my-span-2" style="width: 60%"><span class="span-text">3.32M</span></span></td>
+          <td><span class="dynamicbar2">Loading..</span></td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>22</td>
+          <td><span class="my-span-1" style="width: 12%"><span class="span-text">4.22K</span></span></td>
+          <td><span class="dynamicbar">Loading..</span></td>
+          <td><span class="my-span-2" style="width: 20%"><span class="span-text">1.05M</span></span></td>
+          <td><span class="dynamicbar2">Loading..</span></td>
+        </tr>
+
+        <tr>
+                <th scope="row"></th>
+                <td>2323</td>
+                <td><span class="my-span-1" style="width: 65%"><span class="span-text">30.9K</span></span></td>
+                <td><span class="dynamicbar">Loading..</span></td>
+                <td><span class="my-span-2" style="width: 16%"><span class="span-text">736K</span></span></td>
+                <td><span class="dynamicbar2">Loading..</span></td>
+              </tr>
+              <tr>
+                    <th scope="row"></th>
+                    <td>445</td>
+                    <td><span class="my-span-1" style="width: 20%"><span class="span-text">8.77K</span></span></td>
+                    <td><span class="dynamicbar">Loading..</span></td>
+                    <td><span class="my-span-2" style="width: 14%"><span class="span-text">727K</span></span></td>
+                    <td><span class="dynamicbar2">Loading..</span></td>
+                </tr>
+
+                <tr>
+
+
+            <tr>
+                    <th scope="row"></th>
+                    <td>3389</td>
+                    <td><span class="my-span-1" style="width: 8%"><span class="span-text">1.88K</span></span></td>
+                    <td><span class="dynamicbar">Loading..</span></td>
+                    <td><span class="my-span-2" style="width: 8%"><span class="span-text">240K</span></span></td>
+                    <td><span class="dynamicbar2">Loading..</span></td>
+                </tr>
+                <tr>
+                        <th scope="row"></th>
+                        <td>3306</td>
+                        <td><span class="my-span-1" style="width: 1%"><span class="span-text">253</span></span></td>
+                        <td><span class="dynamicbar">Loading..</span></td>
+                        <td><span class="my-span-2" style="width: 1%"><span class="span-text">237K</span></span></td>
+                        <td><span class="dynamicbar2">Loading..</span></td>
+                    </tr>
+
+                    
+                    <tr>
+                            <th scope="row"></th>
+                            <td>80</td>
+                            <td><span class="my-span-1" style="width: 2%"><span class="span-text">798</span></span></td>
+                            <td><span class="dynamicbar">Loading..</span></td>
+                            <td><span class="my-span-2" style="width: 2%"><span class="span-text">127K</span></span></td>
+                            <td><span class="dynamicbar2">Loading..</span></td>
+                        </tr>
+
+                <th scope="row"></th>
+                <td>8080</td>
+                <td><span class="my-span-1" style="width: 1%"><span class="span-text">456</span></span></td>
+                <td><span class="dynamicbar">Loading..</span></td>
+                <td><span class="my-span-2" style="width: 1%"><span class="span-text">83.4K</span></span></td>
+                <td><span class="dynamicbar2">Loading..</span></td>
+            </tr>
+            <tr>
+                    <th scope="row"></th>
+                    <td>443</td>
+                    <td><span class="my-span-1" style="width: 1%"><span class="span-text">419</span></span></td>
+                    <td><span class="dynamicbar">Loading..</span></td>
+                    <td><span class="my-span-2" style="width: 1%"><span class="span-text">72.5K</span></span></td>
+                    <td><span class="dynamicbar2">Loading..</span></td>
+                </tr>
+
+
+
+
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  </div>
+
+  <script>
+    $(function(){
+
+        
+     var  timeArray = [];
+     function generateArray(){
+        var  randomArray = [];
+        timeArray =[];
+        for(var i=0;i<140;i++){
+           
+            randomArray[i] = new Array();
+            randomArray[i][0] =Math.floor(Math.random()*50);
+            randomArray[i][1] = 0 - randomArray[i][0];
+
+            timeArray.push(moment().subtract(140-i,'days').format('YYYY/MM/DD hh:mm:ss'))
+
+        }
+        return randomArray
+     }
+
+
+
+        $('.dynamicbar').each(function(){
+
+            $(this).sparkline(generateArray(), {
+            type: 'bar', 
+            stackedBarColor:['#FB9A99','#FB9A99'],
+            //width: 100,
+            barWidth:'2.6px',
+            height: '30px',
+            barSpacing: 0.7,
+           // chartRangeMin: 0,
+            //highlightLighten: 1.4,
+            highlightColor: '#888',
+            tooltipFormatter: function(a,b,c,d){
+                console.log(a,b,c)
+                var index = c[0].offset;
+                var temp = "time: "+timeArray[index]+"<br/> value:" +  Math.abs(c[0].value);
+                return temp; 
+            }
+        } );
+        })
+
+        $('.dynamicbar2').each(function(){
+
+            $(this).sparkline(generateArray(), {
+            type: 'bar', 
+            stackedBarColor:['#67C3EF','#67C3EF'],
+            //width: 100,
+            barWidth:'2.6px',
+            height: '30px',
+            barSpacing: 0.7,
+           // chartRangeMin: 0,
+            //highlightLighten: 1.4,
+            highlightColor: '#888',
+            tooltipFormatter: function(a,b,c,d){
+                console.log(a,b,c)
+                var index = c[0].offset;
+                var temp = "time: "+timeArray[index]+"<br/> value:" +  Math.abs(c[0].value);
+                return temp; 
+            }
+        } );
+        })
+
+    })
+  </script>
+</body>
+</html>
