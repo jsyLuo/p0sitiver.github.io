@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pavanam" rel="stylesheet"> -->
+
+    <style>
+        /* pavanam-regular - latin */
+
+        @font-face {
+            font-family: 'Pavanam';
+            font-style: normal;
+            font-weight: 400;
+            src: url('./fonts/pavanam-v2-latin-regular.eot');
+            /* IE9 Compat Modes */
+            src: local('Pavanam'), local('Pavanam-Regular'),
+            url('../vendor/fonts/pavanam-v2-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('../vendor/fonts/pavanam-v2-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+            url('../vendor/fonts/pavanam-v2-latin-regular.woff') format('woff'), /* Modern Browsers */
+            url('../vendor/fonts/pavanam-v2-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+            url('../vendor/fonts/pavanam-v2-latin-regular.svg#Pavanam') format('svg');
+            /* Legacy iOS */
+        }
+
+        body {
+            margin: 0;
+            /* font: normal 75% Arial, Helvetica, sans-serif;  */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Pavanam', sans-serif;
+            font-weight: 500;
+        }
+
+        canvas {
+            display: block;
+            vertical-align: bottom;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .v-middle {
+            position: absolute;
+            width: 100%;
+            top: 36%;
+            left: 0;
+            -webkit-transform: translate(0%, -50%);
+            -moz-transform: translate(0%, -50%);
+            -ms-transform: translate(0%, -50%);
+            -o-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+
+        .caption h4 {
+            font-size: 150%;
+            color: #aaa;
+            padding-bottom: 10px;
+        }
+
+
+        .caption h1 {
+            font-size: 300%;
+            font-size: 4em;
+            color: #d1b389;
+        }
+
+
+        .caption h1 span {
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="caption v-middle text-center">
+        <h4>In Blockchain We Trust</h4>
+        <h1>
+            <span></span> with INBlockchain ...</h1>
+    </div>
+    <script src="../vendor/particles.js"></script>
+    <script src="../vendor/jquery.js"></script> 
+
+    <script src='./app.js'></script>
+
+
+    <script>
+        $(function () {
+
+            var tempObj = function(){
+
+                var strArray = ["BUILD", "THINK", "INVEST", "GROW", "WORK", "DREAM"],
+                arrayPos = 0;
+                startDelay = 1e3,
+                backDelay = 2e3;
+                var dom  = $('.caption h1 span');
+
+                
+            function loop(){
+                startDelay =0 ;
+             if(arrayPos == strArray.length){
+                arrayPos =0 ;
+                startDelay = 1e3;
+             }
+               this.timeout = setTimeout(function(){
+
+                typeWrite(strArray[arrayPos],0);
+
+               },startDelay);
+
+            }
+
+
+            function typeWrite(str,pos){
+                var i = Math.round(70 * Math.random());
+                var _this = this;
+                _this.timeout = setTimeout(() => {
+                   // var i = 0;
+                    //_this.timeout = setTimeout(function(){
+
+                        if(pos == str.length){
+
+                            _this.timeout = setTimeout(function () {
+                                            backspace(str,pos);
+                                        }, backDelay)
+
+                        }else{
+                           
+                            var tempStr = str.substr(0, pos + 1);
+                            dom.text(tempStr);
+                            pos++;
+                            typeWrite(str,pos);
+                        }
+
+
+
+                   // },i);
+
+                }, i);
+
+
+
+            function backspace(str,pos){
+                var i = Math.round(70 * Math.random());
+                var _this = this;
+                this.timeout = setTimeout(function(){
+                    var tempStr = str.substr(0, pos);
+                    dom.text(tempStr);
+
+                    if(pos > 0){
+                        pos--;
+                        backspace(str,pos);
+                    }else{
+                        arrayPos++;
+                        loop();
+                    }
+                },i)
+
+            }    
+
+
+            }
+
+            loop();
+                
+
+            }();
+
+        })
+    </script>
+
+
+</body>
+
+</html>
