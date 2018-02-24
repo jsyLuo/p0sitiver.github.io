@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #ddd;
+        }
+
+        .wrap{
+            width: 1100px;
+            margin: 0 auto;
+            color: rgb(9, 75, 9);
+            
+        }
+
+        h4{
+          margin-left: 200px;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        ul li {
+            margin-top: 10px;
+        }
+
+        ul li span:first-child {
+            text-align: right;
+            width: 200px;
+            display: inline-block;
+            margin-right: 20px;
+            font-weight: 600;
+        }
+
+        span.info {
+            color: rgb(243, 24, 61);
+            margin-left: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h4>发现网上-g --save-dev等位置有前有后，稍微规范点没什么不好，以下部分内容摘录官网</h4>
+        <ul>
+            <li>
+                <span>
+                    <a href="https://www.npmjs.com.cn/">官方手册</a>
+                </span>
+                <span>https://www.npmjs.com.cn/</span>
+            </li>
+            <li>
+                <span>安装本地包</span>
+                <span>npm install &lt;package_name&gt;</span>
+                <span class="info">在本地目录中如果没有 package.json 这个文件的话，那么最新版本的包会被安装。</span>
+            </li>
+            <li>
+                <span>卸载本地包</span>
+                <span>npm uninstall &lt;package_name&gt;</span>
+                <span class="info">如从 package.json中删除依赖则npm uninstall --save lodash。</span>
+            </li>
+            <li>
+                <span>更新本地包</span>
+                <span>npm update</span>
+                <span class="info">在 package.json 所在的目录中执行该命令。</span>
+            </li>
+            <li>
+                <span>安装全局包</span>
+                <span>npm install -g &lt;package_name&gt;</span>
+            </li>
+            <li>
+                <span>卸载全局包</span>
+                <span>npm uninstall -g &lt;package_name&gt;</span>
+            </li>
+            <li>
+                <span>更新全局包</span>
+                <span>npm update -g &lt;package_name&gt;</span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span>查看帮助</span>
+                <span>1、npm -h &nbsp;&nbsp;2、npm i -h</span>
+            </li>
+            <li>
+                <span>查看升级版本</span>
+                <span>1、npm -v &nbsp;&nbsp;2、npm install npm@latest -g</span>
+            </li>
+            <li>
+                <span>注册淘宝镜像 </span>
+                <span>npm install -g cnpm --registry= https://registry.npm.taobao.org</span>
+            </li>
+            <li>
+                <span>参数-P, --save-prod</span>
+                <span>Package will appear in your dependencies. This is the default unless -D or -O are present.</span>
+            </li>
+            <li>
+                <span>参数-D, --save-dev</span>
+                <span>Package will appear in your devDependencies.</span>
+                <span class="info">npm install node-tap --save-dev</span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
