@@ -1,0 +1,21 @@
+<h3 id="-">相对路径 如何表示上下级目录</h3>
+<p><a href="https://blog.csdn.net/dahuzix/article/details/9276549">参考</a></p>
+<p><strong> 如何表示上级目录 </strong>   </p>
+<p>../表示源文件所在目录的上一级目录，../../表示源文件所在目录的上上级目录，以此类推。</p>
+<p>假设info.html路径是：c:/Inetpub/wwwroot/sites/blabla/info.html  </p>
+<p>假设index.html路径是：c:/Inetpub/wwwroot/sites/index.html<br>在info.html加入index.html超链接的代码应该这样写：  </p>
+<p><code>&lt;a href = &quot;../index.html&quot;&gt;index.html&lt;/a&gt;</code></p>
+<p>假设info.html路径是：c:/Inetpub/wwwroot/sites/blabla/info.html  </p>
+<p>假设index.html路径是：c:/Inetpub/wwwroot/index.html<br>在info.html加入index.html超链接的代码应该这样写：  </p>
+<p><code>&lt;a href = &quot;../../index.html&quot;&gt;index.html&lt;/a&gt;</code></p>
+<p>假设info.html路径是：c:/Inetpub/wwwroot/sites/blabla/info.html  </p>
+<p>假设index.html路径是：c:/Inetpub/wwwroot/sites/wowstory/index.html<br>在info.html加入index.html超链接的代码应该这样写：  </p>
+<p><code>&lt;a href = &quot;../wowstory/index.html&quot;&gt;index.html&lt;/a&gt;</code></p>
+<p><strong> 如何表示下级目录 </strong></p>
+<p>引用下级目录的文件，直接写下级目录文件的路径即可。</p>
+<p>假设info.html路径是：c:/Inetpub/wwwroot/sites/blabla/info.html   </p>
+<p>假设index.html路径是：c:/Inetpub/wwwroot/sites/blabla/html/index.html 在info.html加入index.html超链接的代码应该这样写：  </p>
+<p><code>&lt;a href = &quot;html/index.html&quot;&gt;index.html&lt;/a&gt;</code></p>
+<p>假设info.html路径是：c:/Inetpub/wwwroot/sites/blabla/info.html  </p>
+<p>假设index.html路径是：c:/Inetpub/wwwroot/sites/blabla/html/tutorials/index.html<br>在info.html加入index.html超链接的代码应该这样写：  </p>
+<p><code>&lt;a href = &quot;html/tutorials/index.html&quot;&gt;index.html&lt;/a&gt;</code></p>
